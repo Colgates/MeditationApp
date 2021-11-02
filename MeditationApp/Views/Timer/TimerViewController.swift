@@ -67,7 +67,6 @@ class TimerViewController: UIViewController {
     
     private let soundsButton: SoftUIView = {
         let button = SoftUIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        button.addTarget(self, action: #selector(soundsButtonTapped), for: .touchUpInside)
         button.cornerRadius = 25
         button.type = .pushButton
         return button
@@ -213,7 +212,7 @@ class TimerViewController: UIViewController {
         minutes = 0
         seconds = 0
         time = 0
-        
+        player = nil
         startButton.isSelected = false
         isTimerStarted = false
         timer.invalidate()
@@ -300,12 +299,7 @@ extension TimerViewController {
     }
     
     @objc private func stopButtonTapped() {
-        player = nil
         reset()
-    }
-    
-    @objc private func soundsButtonTapped() {
-        print("soundsButtonTapped")
     }
     
     @objc private func changeAppearanceButtonTapped() {

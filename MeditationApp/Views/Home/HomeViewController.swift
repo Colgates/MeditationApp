@@ -41,8 +41,11 @@ class HomeViewController: UIViewController {
         view.backgroundColor = Colors.main
         view.addSubview(activityIndicator)
         view.addSubview(tableView)
+        
         tableView.delegate = self
+        
         activityIndicator.startAnimating()
+        
         viewModel.fetchData { done in
             if done {
                 self.activityIndicator.stopAnimating()
