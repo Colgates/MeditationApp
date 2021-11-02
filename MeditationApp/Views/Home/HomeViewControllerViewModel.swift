@@ -7,7 +7,7 @@
 
 import Combine
 import UIKit
-
+// TODO: Need to clean my viewmodel
 enum Section {
     case main
 }
