@@ -19,6 +19,7 @@
 		8D13CE9126EBAC59005772C5 /* TimerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13CE9026EBAC59005772C5 /* TimerAnimationView.swift */; };
 		8D285C8B26DD0A720040F898 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D285C8A26DD0A720040F898 /* Colors.swift */; };
 		8D285C9026DD215E0040F898 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D285C8F26DD215E0040F898 /* SoftUIView.swift */; };
+		8D622FC32731095400F00ED0 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D622FC22731095400F00ED0 /* Route.swift */; };
 		8D7D51CC26DE6D240089FA1F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7D51CB26DE6D240089FA1F /* Images.swift */; };
 		8D817F3D26E86236002B04A7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D817F3C26E86236002B04A7 /* TabBarViewController.swift */; };
 		8DB413E726DD41C30099D36E /* HomeViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB413E626DD41C30099D36E /* HomeViewControllerViewModel.swift */; };
@@ -30,7 +31,6 @@
 		8DCDA56526E7BE11004B56D8 /* SoundsCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCDA56426E7BE11004B56D8 /* SoundsCollectionTableViewCell.swift */; };
 		8DF10F1D26E08FEE00308CFF /* meditate.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DF10F1C26E08FEE00308CFF /* meditate.json */; };
 		8DF10F2126E090EE00308CFF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8DF10F2026E090EE00308CFF /* Lottie */; };
-		8DF3FABD26E751DE00656E01 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FABC26E751DE00656E01 /* Route.swift */; };
 		8DF3FABF26E7551400656E01 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FABE26E7551400656E01 /* CustomTabBar.swift */; };
 		8DF3FAC126E7557A00656E01 /* SoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FAC026E7557A00656E01 /* SoundsViewController.swift */; };
 		8DF3FAC326E7558E00656E01 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FAC226E7558E00656E01 /* TimerViewController.swift */; };
@@ -51,6 +51,7 @@
 		8D13CE9026EBAC59005772C5 /* TimerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnimationView.swift; sourceTree = "<group>"; };
 		8D285C8A26DD0A720040F898 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8D285C8F26DD215E0040F898 /* SoftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
+		8D622FC22731095400F00ED0 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		8D7D51CB26DE6D240089FA1F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8D817F3C26E86236002B04A7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8DB413E626DD41C30099D36E /* HomeViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerViewModel.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		8DCDA56126E7BBC9004B56D8 /* SoundsViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsViewControllerViewModel.swift; sourceTree = "<group>"; };
 		8DCDA56426E7BE11004B56D8 /* SoundsCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		8DF10F1C26E08FEE00308CFF /* meditate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meditate.json; sourceTree = "<group>"; };
-		8DF3FABC26E751DE00656E01 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		8DF3FABE26E7551400656E01 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		8DF3FAC026E7557A00656E01 /* SoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsViewController.swift; sourceTree = "<group>"; };
 		8DF3FAC226E7558E00656E01 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB413EA26DD440C0099D36E /* APICaller.swift */,
-				8DF3FABC26E751DE00656E01 /* Route.swift */,
+				8D622FC22731095400F00ED0 /* Route.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -330,8 +330,8 @@
 				8D0C26E426DCC53900097757 /* HomeViewController.swift in Sources */,
 				8DB413F626DD45900099D36E /* CustomCollectionViewCell.swift in Sources */,
 				8DCDA56226E7BBC9004B56D8 /* SoundsViewControllerViewModel.swift in Sources */,
+				8D622FC32731095400F00ED0 /* Route.swift in Sources */,
 				8D285C8B26DD0A720040F898 /* Colors.swift in Sources */,
-				8DF3FABD26E751DE00656E01 /* Route.swift in Sources */,
 				8DF3FAC326E7558E00656E01 /* TimerViewController.swift in Sources */,
 				8D11396626E27EB80059C679 /* RoundedShadow.swift in Sources */,
 				8D0C26E026DCC53900097757 /* AppDelegate.swift in Sources */,
