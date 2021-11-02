@@ -9,11 +9,6 @@ import Foundation
 
 // MARK: - ResponseWrapper
 struct ResponseWrapper: Codable {
-    let data: DataClass
-}
-
-// MARK: - DataClass
-struct DataClass: Codable {
     let data: Model
 }
 
@@ -25,8 +20,9 @@ struct Model: Codable, Hashable {
 
 // MARK: - Meditation
 struct Meditation: Codable {
-    let title, description: String
-    let exercises: [Item]
+    let title: String
+    let description: String
+    let items: [Item]
 }
 
 // MARK: - Sound

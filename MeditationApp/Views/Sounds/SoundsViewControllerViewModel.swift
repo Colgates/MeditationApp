@@ -15,7 +15,7 @@ final class SoundsViewControllerViewModel {
     var dataSource: UITableViewDiffableDataSource<Section, Sound>?
     
     func fetchData(isComplete: @escaping (Bool)->Void) {
-        APICaller.shared.getSoundDataUsingCombine()
+        APICaller.shared.getSoundsData()
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)

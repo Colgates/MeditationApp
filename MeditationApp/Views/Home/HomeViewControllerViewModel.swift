@@ -19,7 +19,7 @@ final class HomeViewControllerViewModel {
     var dataSource: UITableViewDiffableDataSource<Section, Meditation>?
     
     func fetchData(isComplete: @escaping (Bool)->Void) {
-        APICaller.shared.getMeditationDataUsingCombine()
+        APICaller.shared.getMeditationsData()
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)

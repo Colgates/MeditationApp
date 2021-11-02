@@ -85,7 +85,7 @@ class HomeCollectionTableViewCell: UITableViewCell {
     
     func configure(with model: Meditation) {
         configureDataSource()
-        updateSnapshot(with: model.exercises)
+        updateSnapshot(with: model.items)
         titleLabel.text = model.title
     }
 }

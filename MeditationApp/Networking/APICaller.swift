@@ -12,7 +12,7 @@ class APICaller {
     
     static let shared = APICaller()
     
-    func createRequest(route: Route) -> URLRequest {
+    private func createRequest(route: Route) -> URLRequest {
         
         let url = URL(string: Route.baseURL)
         
@@ -27,21 +27,21 @@ class APICaller {
         return request
     }
     
-    func getMeditationDataUsingCombine() -> AnyPublisher<[Meditation], Error> {
+    func getMeditationsData() -> AnyPublisher<[Meditation], Error> {
         
         return URLSession.shared.dataTaskPublisher(for: createRequest(route: .meditations))
             .map(\.data)
             .decode(type: ResponseWrapper.self, decoder: JSONDecoder())
-            .map {$0.data.data.meditations ?? []}
+            .map {$0.data.meditations ?? []}
             .eraseToAnyPublisher()
     }
     
-    func getSoundDataUsingCombine() -> AnyPublisher<[Sound], Error> {
+    func getSoundsData() -> AnyPublisher<[Sound], Error> {
         
         return URLSession.shared.dataTaskPublisher(for: createRequest(route: .sounds))
             .map(\.data)
             .decode(type: ResponseWrapper.self, decoder: JSONDecoder())
-            .map {$0.data.data.sounds ?? []}
+            .map {$0.data.sounds ?? []}
             .eraseToAnyPublisher()
     }
 }

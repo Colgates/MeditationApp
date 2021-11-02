@@ -17,9 +17,9 @@ enum Route {
     var description: [String:String] {
         switch self {
         case .meditations:
-            return ["query" : "query { data { meditations { title, description, exercises { title, author, length, url, imageURL } } } }"]
+            return ["query" : "query { meditations { title, description, items { title, author, length, url, imageURL } } }"]
         case .sounds:
-            return ["query" : "query { data { sounds { title, items { title, length, url, imageURL } } } }"]
+            return ["query" : "query { sounds { title, items { title, length, url, imageURL } } }"]
         }
     }
 }

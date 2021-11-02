@@ -70,6 +70,7 @@ class HomeViewController: UIViewController {
     private func configureDatasource() {
         viewModel.dataSource = UITableViewDiffableDataSource<Section, Meditation>(tableView: tableView, cellProvider: { tableView, indexPath, model in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeCollectionTableViewCell.identifier, for: indexPath) as? HomeCollectionTableViewCell else { return UITableViewCell() }
+//            let cell = HomeCollectionTableViewCell()
             cell.configure(with: model)
             cell.delegate = self
             return cell

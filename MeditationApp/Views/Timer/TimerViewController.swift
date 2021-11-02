@@ -8,6 +8,7 @@
 import Combine
 import Lottie
 import UIKit
+import AVFoundation
 
 enum TimerType {
     case pickerView
@@ -16,6 +17,7 @@ enum TimerType {
 
 class TimerViewController: UIViewController {
     
+    private var player: AVPlayer?
     private var timer = Timer()
     private var timerType: TimerType = .pickerView
     private var isTimerStarted = false
@@ -90,6 +92,8 @@ class TimerViewController: UIViewController {
     
     private let components = [24, 60, 60]
     
+    private var selectedSounds: [Sound] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
@@ -108,27 +112,31 @@ class TimerViewController: UIViewController {
         setupSoftButton(button: changeAppearanceButton, buttonImage: Images.minusButton, selectedButtonImage: Images.circleButton)
         setupSoftButton(button: goBackButton, buttonImage: Images.goBackButton, selectedButtonImage: Images.goBackButton)
         
-        configureSoundsMenuButton()
+        getSounds()
     }
     
-    private func configureSoundsMenuButton() {
-        
-        APICaller.shared.getSoundDataUsingCombine()
+    private func getSounds() {
+        APICaller.shared.getSoundsData()
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)
-            } receiveValue: { sounds in
-                var actions: [UIAction] = []
-                
-                sounds.forEach { item in
-                    actions.append(UIAction(title: item.title, handler: { _ in }))
-                }
-                
-                let menu = UIMenu(title: "", children: actions)
-                self.soundsButton.menu = menu
-                self.soundsButton.showsMenuAsPrimaryAction = true
+            } receiveValue: { [weak self] sounds in
+                self?.selectedSounds = sounds
+                self?.configureSoundsMenuButton(with: sounds)
             }
             .store(in: &self.cancellables)
+    }
+    
+    private func configureSoundsMenuButton(with sounds: [Sound]) {
+        var actions: [UIAction] = []
+        sounds.forEach { item in
+            actions.append(UIAction(title: item.title, handler: { action in
+                if let randomSound = item.items.randomElement() {
+                self.configurePlayer(with: randomSound.url)
+                }
+            }))}
+        self.soundsButton.menu = UIMenu(title: "", children: actions)
+        self.soundsButton.showsMenuAsPrimaryAction = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -228,6 +236,13 @@ class TimerViewController: UIViewController {
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
     
+    private func configurePlayer(with urlString: String) {
+
+        guard let url = URL(string: urlString) else { return }
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem)
+    }
+    
     private func setupSoftButton(button: SoftUIView, buttonImage: UIImage, selectedButtonImage: UIImage) {
         let image = UIImageView(image: buttonImage)
         image.tintColor = Colors.tintColor
@@ -255,6 +270,9 @@ extension TimerViewController {
             startButton.isSelected = false
             return }
         soundsButton.isEnabled = false
+        
+        player?.play()
+        
         switch timerType {
         case .animationView:
             if !isTimerStarted {
@@ -282,6 +300,7 @@ extension TimerViewController {
     }
     
     @objc private func stopButtonTapped() {
+        player = nil
         reset()
     }
     
