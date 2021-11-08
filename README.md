@@ -9,7 +9,7 @@ CLient:
 - UIKit
 - REST API
 - Combine
-- 
+
 Backend:
 - Apollo GraphQL Server
 - Amazon S3 Bucket
