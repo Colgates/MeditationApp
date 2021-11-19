@@ -4,7 +4,7 @@
 Well, that is the app I was working on lately. The main purpose of it, that you can listen guided meditations and sounds of nature to relax and comfort yourself, train your mindfulness. I added a timer so you can keep track of time when you're meditating by yourselves.
 
 ## Built With
-CLient:
+Client:
 - Swift
 - UIKit
 - REST API
