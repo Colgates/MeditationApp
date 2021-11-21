@@ -1,7 +1,7 @@
 # MeditationApp
 ![screenshot](/screenshot.webp)
 ## Description
-Well, that is the app I was working on lately. The main purpose of it, that you can listen guided meditations and sounds of nature to relax and comfort yourself, train your mindfulness. I added a timer so you can keep track of time when you're meditating by yourselves.
+This is the app that I have been working on recently. Its main purpose is to listen to guided meditations and sounds of nature in order to relax and calm yourself, to train mindfulness. I've added a timer so you can keep track of the time you are meditating yourself.
 
 ## Built With
 Client:
